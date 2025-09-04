@@ -41,7 +41,7 @@ MIN_MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_ao
 
 # functions to set up things for each supported manifest branch
 do_fox_141() {
-	MIN_MANIFEST="https://github.com/nebrassy/platform_manifest_twrp_aosp.git";
+	MIN_MANIFEST="https://github.com/Just-TWRP/platform_manifest_twrp_aosp.git";
 	BASE_VER=14;
 	FOX_BRANCH="fox_14.1";
 	FOX_DEF_BRANCH="fox_14.1";
@@ -199,7 +199,7 @@ get_twrp_minimal_manifest() {
   echo "-- Done.";
 
   echo "-- Syncing the $TWRP_BRANCH minimal manifest repo ...";
-  repo sync;
+  repo sync -j25;
   [ "$?" != "0" ] && {
    abort "-- Failed to Sync the minimal manifest repo. Quitting.";
   }
