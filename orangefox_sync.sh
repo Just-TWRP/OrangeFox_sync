@@ -44,7 +44,7 @@ do_fox_160() {
 	MIN_MANIFEST="https://github.com/Just-TWRP/platform_manifest_twrp_aosp.git";
 	BASE_VER=16;
 	FOX_BRANCH="fox_14.1";
-	FOX_DEF_BRANCH="fox_14.1";
+	FOX_DEF_BRANCH="fox_16.0";
 	TWRP_BRANCH="twrp-16.0";
 	DEVICE_BRANCH="android-14";
 	test_build_device="vayu"; # the device whose tree we can clone for compiling a test build
