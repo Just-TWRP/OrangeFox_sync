@@ -40,6 +40,17 @@ MANIFEST_DIR="";
 MIN_MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git";
 
 # functions to set up things for each supported manifest branch
+do_fox_160() {
+	MIN_MANIFEST="https://github.com/Just-TWRP/platform_manifest_twrp_aosp.git";
+	BASE_VER=16;
+	FOX_BRANCH="fox_14.1";
+	FOX_DEF_BRANCH="fox_14.1";
+	TWRP_BRANCH="twrp-16.0";
+	DEVICE_BRANCH="android-14";
+	test_build_device="vayu"; # the device whose tree we can clone for compiling a test build
+	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
+}
+
 do_fox_141() {
 	MIN_MANIFEST="https://github.com/Just-TWRP/platform_manifest_twrp_aosp.git";
 	BASE_VER=14;
@@ -116,7 +127,12 @@ Process_CMD_Line() {
              # branch
                 -b | -B | --branch)
                 	shift;
-			if [ "$1" = "14.1" ]; then
+			if [ "$1" = "16.0" ]; then
+				echo "**************";
+				echo "*** WARNING***: the fox_14.1 branch is *EXPERIMENTAL*! Also, syncing will take a *VERY* long time";
+				echo "**************";
+				do_fox_160;
+			elif [ "$1" = "14.1" ]; then
 				echo "**************";
 				echo "*** WARNING***: the fox_14.1 branch is *EXPERIMENTAL*! Also, syncing will take a *VERY* long time";
 				echo "**************";

@@ -10,6 +10,13 @@
 	cd ~/OrangeFox_sync/sync/
 	./orangefox_sync.sh --branch 14.1 --path ~/fox_14.1
 
+### 2. Fetch these sync tools A16 ###
+	mkdir ~/OrangeFox_sync
+	cd ~/OrangeFox_sync
+	git clone https://github.com/Just-TWRP/OrangeFox_sync.git sync # (or, using ssh, "git clone git@gitlab.com:OrangeFox/sync.git")
+	cd ~/OrangeFox_sync/sync/
+	./orangefox_sync.sh --branch 16.0 --path ~/fox_16.0
+
 Notes:
 - You *MUST* supply an *ABSOLUTE* path name for the "--path" switch
 - If the sync process gets stuck, you might need to terminate it with Ctrl-C and then run the script again
@@ -18,6 +25,7 @@ Notes:
 
 ## These manifest branches are supported by the orangefox_sync.sh script: ##
 ----------------------------------
+	16.0
 	14.1
 	12.1
 
